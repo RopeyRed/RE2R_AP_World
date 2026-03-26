@@ -18,6 +18,7 @@ class Data:
     item_table = []
     location_table = []
     enemy_table = []
+    files_table = []
     region_table = []
     region_connections_table = []
 
@@ -32,6 +33,7 @@ class Data:
 
         location_start = item_start = 3000000000 + character_offsets[character] + scenario_offsets[scenario]
         enemy_start = location_start + 1000000000
+        files_start = enemy_start + 1000000000
 
         ###
         # Add standard regions
@@ -204,3 +206,23 @@ class Data:
             for key, enemy in enumerate(enemy_table) if not enemy.get('excluded', 0)
         ])
 
+        ###
+        # Add files table
+        ###
+
+        files_table = load_data_file(character, scenario, 'files.json')
+
+        Data.files_table.extend([
+            { 
+                **files, 
+                'id': files['id'] if files.get('id') else files_start + key,
+                'region': files['region'] + scenario_suffix, # add the scenario abbreviation so they're unique
+                'character': character,
+                'scenario': scenario,
+                'difficulty': None,
+
+                # since enemy kills don't give items themselves, just randomize more combat-related items into the pool
+                'original_item': "__File Get Drop Placeholder__"
+            }
+            for key, files in enumerate(files_table) if not files.get('excluded', 0)
+        ])

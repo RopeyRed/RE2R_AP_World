@@ -141,6 +141,21 @@ class AllowProgressionInLabs(Choice):
     option_true = 1
     default = 0
 
+class AddFilesAsLocations(Choice):
+    """When enabled, multiworld items are also placed on the files in your world. Collecting those files gives the item.
+
+    Currently only supports Leon's B (2nd) scenario on Standard difficulty.
+    
+        The available options are:
+
+    None: You decided not to add a handful of locations to your world.
+    All: Every file in the game now gives an item when collected.
+    """
+    display_name = "Add Enemy Kills as Locations"
+    option_none = 0
+    option_all = 1
+    default = 0
+
 class AddEnemyKillsAsLocations(Choice):
     """When enabled, multiworld items are also placed on the enemies in your world. Killing those enemies gives the item.
 
