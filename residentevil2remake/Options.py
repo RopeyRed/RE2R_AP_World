@@ -144,14 +144,14 @@ class AllowProgressionInLabs(Choice):
 class AddFilesAsLocations(Choice):
     """When enabled, multiworld items are also placed on the files in your world. Collecting those files gives the item.
 
-    Currently only supports Leon's B (2nd) scenario on Standard difficulty.
+    Currently only supports Claire's A (1st) and Leon's B (2nd) scenario on Standard difficulty.
     
-        The available options are:
+    The available options are:
 
     None: You decided not to add a handful of locations to your world.
     All: Every file in the game now gives an item when collected.
     """
-    display_name = "Add Enemy Kills as Locations"
+    display_name = "Add Files As Locations"
     option_none = 0
     option_all = 1
     default = 0
@@ -159,7 +159,7 @@ class AddFilesAsLocations(Choice):
 class AddEnemyKillsAsLocations(Choice):
     """When enabled, multiworld items are also placed on the enemies in your world. Killing those enemies gives the item.
 
-    Currently only supports Leon's A (1st) scenario on Assisted / Standard difficulty.
+    Currently only supports Assisted / Standard difficulty.
     
     NOTE: Ivys can only be killed with fire. If you don't have a fire weapon/ammo to use against them, YOU COULD BE UNABLE TO GET THESE CHECKS.
 
