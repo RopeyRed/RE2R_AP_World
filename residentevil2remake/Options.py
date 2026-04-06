@@ -144,7 +144,7 @@ class AllowProgressionInLabs(Choice):
 class AddFilesAsLocations(Choice):
     """When enabled, multiworld items are also placed on the files in your world. Collecting those files gives the item.
 
-    Currently only supports Claire's A (1st) and Leon's B (2nd) scenario on Standard difficulty.
+    Currently only supports Claire's (1st/2nd) and Leon's B (2nd) scenario on Standard difficulty.
     
     The available options are:
 
