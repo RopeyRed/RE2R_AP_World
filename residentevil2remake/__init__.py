@@ -26,7 +26,7 @@ class RPDNet(WebWorld):
         "Multiworld Setup Guide",
         "A guide for setting up Resident Evil 2 Remake to be played in Archipelago.",
         "English",
-        "setup_en.md",
+        "re3r_en.md",
         "setup/en",
         ["TheRealSolidusSnake"]
     )]
@@ -53,7 +53,7 @@ class ResidentEvil2Remake(World):
 
     data_version = 2
     required_client_version = (0, 5, 0)
-    apworld_release_version = "0.3.4" # defined to show in spoiler log
+    apworld_release_version = "0.3.3" # defined to show in spoiler log
 
     item_id_to_name = { item['id']: item['name'] for item in Data.item_table }
     item_name_to_id = { item['name']: item['id'] for item in Data.item_table }
@@ -644,7 +644,9 @@ class ResidentEvil2Remake(World):
             "all_weapons": self._get_all_weapons(),
             "ammo_pack_modifier": self._format_option_text(self.options.ammo_pack_modifier),
             "damage_traps_can_kill": self._format_option_text(self.options.damage_traps_can_kill) == 'True',
-            "death_link": self._format_option_text(self.options.death_link) == 'Yes' # why is this yes? lol
+            "death_link": self._format_option_text(self.options.death_link) == 'Yes', # why is this yes? lol
+            "enemy_behavior": self._format_option_text(self.options.enemy_behavior),
+            "add_enemy_kills_as_locations": self._format_option_text(self.options.add_enemy_kills_as_locations)
         }
 
         return slot_data

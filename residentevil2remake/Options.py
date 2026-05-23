@@ -182,6 +182,21 @@ class EnemyKillItems(Choice):
     option_healing = 5
     option_trash = 6
     default = 3
+	
+class EnemyBehavior(Choice):
+    """Changes how aggressively enemies behave.
+
+    Off: Vanilla enemy behavior.
+    Doors: Enemies can interact with more doors and pursue more aggressively.
+    Unsafe Rooms: Includes Doors, and safe rooms are no longer treated as safe for normal enemies.
+    Full: Includes Unsafe Rooms, and Nemesis is also allowed through more doors.
+    """
+    display_name = "Enemy Behavior"
+    option_off = 0
+    option_doors = 1
+    option_unsafe_rooms = 2
+    option_full = 3
+    default = 0
 
 class CrossScenarioWeapons(Choice):
     """This option, when set, will randomize the weapons in your scenario, choosing from weapons in all 4 scenarios (LA, LB, CA, CB). 
@@ -403,6 +418,7 @@ class RE2ROptions(StartInventoryFromPoolMixin, DeathLinkMixin, PerGameCommonOpti
     allow_progression_in_labs: AllowProgressionInLabs
     add_enemy_kills_as_locations: AddEnemyKillsAsLocations
     enemy_kill_items: EnemyKillItems
+    enemy_behavior: EnemyBehavior
     cross_scenario_weapons: CrossScenarioWeapons
     ammo_pack_modifier: AmmoPackModifier
     local_weapons: LocalWeapons
